@@ -45,7 +45,7 @@ body {
 .hero {
     position: relative;
     overflow: hidden;
-    min-height: 390px;
+    min-height: 190px;
     display: flex;
     align-items: flex-end;
     padding: 42px 25px 38px;
