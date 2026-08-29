@@ -1,0 +1,358 @@
+/* =========================================================
+   Samuel Atkins — Conference / Academic Profile
+   Mobile-first design for QR-code visitors
+   ========================================================= */
+
+:root {
+    --ink: #171717;
+    --muted: #686868;
+    --paper: #eeeeee;
+    --card: #ffffff;
+    --line: #d6d6d6;
+    --accent: #343434;
+    --accent-dark: #222222;
+    --accent-light: #eeeeee;
+    --max-width: 760px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: var(--card);
+    min-height: 100vh;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 390px;
+    display: flex;
+    align-items: flex-end;
+    padding: 42px 25px 38px;
+    color: white;
+    background:
+        linear-gradient(135deg, #151515 0%, #303030 55%, #4a4a4a 100%);
+}
+
+/* Subtle scientific / grid-like background */
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.13;
+    background-image:
+        linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px);
+    background-size: 42px 42px;
+    transform: perspective(500px) rotateX(58deg) scale(1.5);
+    transform-origin: bottom;
+}
+
+.hero-grid::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -65px;
+    top: 40px;
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 32px rgba(255,255,255,.05),
+        0 0 0 64px rgba(255,255,255,.035);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    margin: 0 0 22px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    opacity: 0.72;
+}
+
+h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 13vw, 5.4rem);
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 0.95;
+}
+
+.subtitle {
+    margin: 18px 0 0;
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.92;
+}
+
+.intro-line {
+    max-width: 510px;
+    margin: 28px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,.3);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.7;
+    opacity: 0.78;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+    padding: 43px 25px;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-label {
+    margin: 0 0 20px;
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.body-text {
+    margin: 0 0 17px;
+    font-size: 1.02rem;
+    color: #293640;
+}
+
+.body-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Research interests ---------- */
+
+.interest-list {
+    border-top: 1px solid var(--line);
+}
+
+.interest {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    min-height: 57px;
+    border-bottom: 1px solid var(--line);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.22rem;
+}
+
+.interest-number {
+    width: 27px;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 0.68rem;
+}
+
+/* ---------- Experience ---------- */
+
+.experience-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+}
+
+.experience-card:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.experience-card h2 {
+    margin: 0 0 3px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.experience-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.card-tag {
+    flex-shrink: 0;
+    padding: 5px 7px;
+    border: 1px solid #cbd4d8;
+    color: var(--accent);
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+/* ---------- Additional training ---------- */
+
+.training-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.training-grid span {
+    padding: 14px 12px;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* ---------- PhD callout ---------- */
+
+.opportunity {
+    padding: 43px 25px;
+    background: #eeeeee;
+    border-bottom: 1px solid var(--line);
+}
+
+.opportunity .section-label {
+    margin-bottom: 12px;
+}
+
+.opportunity h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.opportunity p:not(.section-label) {
+    margin: 10px 0 0;
+    color: var(--muted);
+}
+
+/* ---------- Contact ---------- */
+
+.contact-section {
+    padding-bottom: 48px;
+}
+
+.contact-intro {
+    max-width: 580px;
+    margin: -3px 0 25px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 67px;
+    padding: 12px 16px;
+    border: 1px solid #cbd3d6;
+    color: var(--ink);
+    text-decoration: none;
+    background: white;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.contact-button:hover,
+.contact-button:focus-visible {
+    border-color: var(--accent);
+    background: #f5f9f9;
+    transform: translateY(-1px);
+}
+
+.button-icon {
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    background: var(--accent);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.contact-button small {
+    display: block;
+    margin-bottom: 1px;
+    color: var(--muted);
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.contact-button span:last-child {
+    font-size: 0.96rem;
+    font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 22px 25px;
+    color: var(--muted);
+    font-size: 0.67rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* ---------- Larger screens ---------- */
+
+@media (min-width: 650px) {
+    body {
+        padding: 35px 20px;
+    }
+
+    .page {
+        box-shadow: 0 18px 60px rgba(20, 38, 48, 0.10);
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 55px 58px 52px;
+    }
+
+    .section,
+    .opportunity {
+        padding-left: 58px;
+        padding-right: 58px;
+    }
+
+    footer {
+        padding-left: 58px;
+        padding-right: 58px;
+    }
+}
